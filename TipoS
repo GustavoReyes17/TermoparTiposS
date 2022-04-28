@@ -1,0 +1,109 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+
+float Temperatura;
+float Senalelectrica;
+float Senalelectrica2;
+float FEM50NEG;
+float FEM1768;
+int formula;
+int
+main ()
+{
+   cout<<"1er Rango"<<endl; 
+
+    
+ cout << "Temperatura   " << "Tension de salida" << endl;
+ FEM50NEG=((0.540313308631 * pow (10, -2)) * pow (-50, 1) +
+	 ((0.125934289740 * pow (10, -4))) * pow (-50, 2)) +
+	((-0.232477968689 * pow (10, -7)) * pow (-50, 3)) +
+	((0.322028823036 * pow (10, -10)) * pow (-50, 4)) +
+	((-0.331465196389 * pow (10, -13)) * pow (-50, 5)) +
+	((0.255744251786 * pow (10, -16)) * pow (-50, 6)) + 
+	((-0.125068871393 * pow (10, -19)) * pow (-50, 7)) +
+	((0.271443176145 * pow (10, -23)) * pow (-50, 8));
+	cout<< "-50              " << fixed << setprecision (3) <<FEM50NEG<<""<< "mV" << endl;
+	
+  for (float Temperatura = -48; Temperatura <= 0;
+       Temperatura = Temperatura + 12)
+    {
+
+      Senalelectrica =
+	((0.540313308631 * pow (10, -2)) * pow (Temperatura, 1) +
+	 ((0.125934289740 * pow (10, -4))) * pow (Temperatura, 2)) +
+	((-0.232477968689 * pow (10, -7)) * pow (Temperatura, 3)) +
+	((0.322028823036 * pow (10, -10)) * pow (Temperatura, 4)) +
+	((-0.331465196389 * pow (10, -13)) * pow (Temperatura, 5)) +
+	((0.255744251786 * pow (10, -16)) * pow (Temperatura, 6)) + 
+	((-0.125068871393 * pow (10, -19)) * pow (Temperatura, 7)) +
+	((0.271443176145 * pow (10, -23)) * pow (Temperatura, 8));
+
+      cout << Temperatura << "          " << fixed << setprecision (3) <<
+	Senalelectrica << "mV" << endl;
+
+    }
+    cout<<"2do Rango"<<endl; 
+cout << "Temperatura   " << "Tension de salida" << endl;
+  for (float Temperatura = 0; Temperatura <= 1056;
+       Temperatura = Temperatura + 12)
+    {
+
+      Senalelectrica =
+	((0.540313308631 * pow (10, -2)) * pow (Temperatura, 1) +
+	 ((0.125934289740 * pow (10, -4))) * pow (Temperatura, 2)) +
+	((-0.232477968689 * pow (10, -7)) * pow (Temperatura, 3)) +
+	((0.322028823036 * pow (10, -10)) * pow (Temperatura, 4)) +
+	((-0.331465196389 * pow (10, -13)) * pow (Temperatura, 5)) +
+	((0.255744251786 * pow (10, -16)) * pow (Temperatura, 6)) + 
+	((-0.125068871393 * pow (10, -19)) * pow (Temperatura, 7)) +
+	((0.271443176145 * pow (10, -23)) * pow (Temperatura, 8));
+
+      cout << Temperatura << "          " << fixed << setprecision (3) <<
+	Senalelectrica << "mV" << endl;
+
+    }
+    
+cout<<"3er Rango"<<endl; 
+  for (float Temperatura = 1068; Temperatura <= 1656;
+       Temperatura = Temperatura + 12)
+    {
+
+      Senalelectrica2 =
+	((0.132900444085 * pow (10, 1)) * pow (Temperatura, 0) +
+	 ((0.334509311344 * pow (10, -2))) * pow (Temperatura, 1)) +
+	((0.654805192818 * pow (10, -5)) * pow (Temperatura, 2)) +
+	((-0.164856259209 * pow (10, -8)) * pow (Temperatura, 3)) +
+	((0.129989605174 * pow (10, -13)) * pow (Temperatura, 4));
+	
+      cout << Temperatura << "          " << fixed << setprecision (3) <<
+	Senalelectrica2 << "mV" << endl;
+
+    }
+    cout<<"4to Rango"<<endl; 
+    for (float Temperatura = 1668; Temperatura <= 1768;
+       Temperatura = Temperatura + 12)
+    {
+
+      Senalelectrica2 =
+	((0.146628232636 * pow (10, 3)) * pow (Temperatura, 0) +
+	 ((-2.58430516752 * pow (10, -1))) * pow (Temperatura, 1)) +
+	((0.163693574641 * pow (10, -3)) * pow (Temperatura, 2)) +
+	((-0.330439046987 * pow (10, -7)) * pow (Temperatura, 3)) +
+	((-0.943223690612 * pow (10, -14)) * pow (Temperatura, 4));
+	
+      cout << Temperatura << "          " << fixed << setprecision (3) <<
+	Senalelectrica2 << "mV" << endl;
+
+    }
+FEM1768=((0.146628232636 * pow (10, 3)) * pow (1768, 0) +
+	 ((-2.58430516752 * pow (10, -1))) * pow (1768, 1)) +
+	((0.163693574641 * pow (10, -3)) * pow (1768, 2)) +
+	((-0.330439046987 * pow (10, -7)) * pow (1768, 3)) +
+	((-0.943223690612 * pow (10, -14)) * pow (1768, 4));
+	cout<< "1768.000          " << fixed << setprecision (3) <<FEM1768<<""<< "mV" << endl;
+
+
+  return 0;
+}
